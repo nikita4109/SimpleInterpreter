@@ -6,5 +6,5 @@ class SetVariable : public Procedure
 {
 public:
     explicit SetVariable(Interpreter*);
-    void Run(std::istream &) override;
+    void Run(const std::vector<std::string> &) override;
 };

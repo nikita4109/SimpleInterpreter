@@ -12,9 +12,9 @@ private:
     size_t depth = 0;
 public:
     explicit Interpreter(std::istream&);
-    void Run(std::fstream&);
-    void RunProcedure(Data&);
-    std::string& GetVariable(std::string&);
+    void Run();
+    void RunProcedure(const Data&);
+    std::string& GetVariable(const std::string&);
     Interpreter& operator = (Interpreter&) = default;
 
     size_t count = 0;

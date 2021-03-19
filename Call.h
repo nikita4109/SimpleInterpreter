@@ -6,5 +6,5 @@ class Call: public Procedure
 {
 public:
     explicit Call(Interpreter*);
-    void Run(std::istream &) override;
+    void Run(const std::vector<std::string> &) override;
 };

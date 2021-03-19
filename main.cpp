@@ -11,7 +11,7 @@ int main()
         try
         {
             Interpreter program(istream);
-            program.Run(istream);
+            program.Run();
         }
         catch (const std::runtime_error& error)
         {

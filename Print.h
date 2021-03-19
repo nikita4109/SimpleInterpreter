@@ -7,5 +7,5 @@ class Print : public Procedure
 {
 public:
     explicit Print(Interpreter*);
-    void Run(std::istream &) override;
+    void Run(const std::vector<std::string> &) override;
 };

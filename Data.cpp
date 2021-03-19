@@ -1,37 +1,40 @@
 #include "Data.h"
 
-Data::Data(std::string& _name, std::istream &istream) : name(_name)
+Data::Data(const std::string& _name, std::istream &istream) : name(_name), tokens(Parse(istream)) { }
+
+std::string Data::GetLine()
 {
+    std::string line = name;
+    for (const auto& i: tokens)
+        line += " " + i;
+    return line;
+}
+
+std::vector<std::string> Data::Parse(std::istream &istream)
+{
+    std::vector<std::string> result;
     std::string token;
 
     if (name == "print")
     {
         istream >> token;
-        params = token;
-        return;
+        result.emplace_back(token);
+        return result;
     }
 
     if (name == "call")
     {
         istream >> token;
-        params = token;
-        return;
+        result.emplace_back(token);
+        return result;
     }
 
     if (name == "set")
     {
-        istream >> token; params = token + " ";
-        istream >> token; params += token;
-        return;
+        istream >> token; result.emplace_back(token);
+        istream >> token; result.emplace_back(token);
+        return result;
     }
 }
 
-std::stringstream Data::GetStream()
-{
-    return std::stringstream(params);
-}
-
-std::string Data::GetLine()
-{
-    return name + " " + params;
-}
+Data::Data(const std::string &_name) : name(_name) { }

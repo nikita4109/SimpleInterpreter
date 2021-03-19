@@ -7,7 +7,7 @@ std::string Procedure::GetName()
     return name;
 }
 
-void Procedure::Run(std::istream &)
+void Procedure::Run(const std::vector<std::string> &)
 {
     for (auto &procedure: data)
         interpreter->RunProcedure(procedure);

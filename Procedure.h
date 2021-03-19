@@ -23,6 +23,6 @@ public:
     ~Procedure() = default;
 
     void Print();
-    virtual void Run(std::istream&);
+    virtual void Run(const std::vector<std::string>&);
     std::string GetName();
 };

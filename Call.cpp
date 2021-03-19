@@ -6,10 +6,7 @@ Call::Call(Interpreter *_interpreter) : Procedure(_interpreter)
     name = "call";
 }
 
-void Call::Run(std::istream &istream)
+void Call::Run(const std::vector<std::string> &tokens)
 {
-    std::string procedure_name;
-    istream >> procedure_name;
-    Data data(procedure_name, istream);
-    interpreter->RunProcedure(data);
+    interpreter->RunProcedure(Data(tokens[0]));
 }

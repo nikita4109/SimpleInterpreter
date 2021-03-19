@@ -6,9 +6,7 @@ SetVariable::SetVariable(Interpreter *_interpreter) : Procedure(_interpreter)
     name = "set";
 }
 
-void SetVariable::Run(std::istream &istream)
+void SetVariable::Run(const std::vector<std::string> &tokens)
 {
-    std::string variable, value;
-    istream >> variable >> value;
-    interpreter->GetVariable(variable) = value;
+    interpreter->GetVariable(tokens[0]) = tokens[1];
 }

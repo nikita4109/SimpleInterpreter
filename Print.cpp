@@ -2,11 +2,9 @@
 #include <iostream>
 #include "Interpreter.h"
 
-void Print::Run(std::istream &istream)
+void Print::Run(const std::vector<std::string> &tokens)
 {
-    std::string variable;
-    istream >> variable;
-    std::cout << interpreter->GetVariable(variable) << std::endl;
+    std::cout << interpreter->GetVariable(tokens[0]) << std::endl;
 }
 
 Print::Print(Interpreter* _interpreter) : Procedure(_interpreter)

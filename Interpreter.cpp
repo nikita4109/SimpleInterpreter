@@ -26,12 +26,12 @@ Interpreter::Interpreter(std::istream &istream)
         throw std::runtime_error("Программа не содержит функцию main");
 }
 
-void Interpreter::Run(std::fstream &istream)
+void Interpreter::Run()
 {
-    procedures["main"]->Run(istream);
+    procedures["main"]->Run({});
 }
 
-void Interpreter::RunProcedure(Data &data)
+void Interpreter::RunProcedure(const Data &data)
 {
     //std::cerr << "run" << " " << data.name << std::endl;
 
@@ -39,12 +39,11 @@ void Interpreter::RunProcedure(Data &data)
         throw std::runtime_error("Превышена максимальная глубина рекурсии");
 
     ++depth;
-    auto stream = data.GetStream();
-    procedures[data.name]->Run(stream);
+    procedures[data.name]->Run(data.tokens);
     --depth;
 }
 
-std::string& Interpreter::GetVariable(std::string &variable)
+std::string& Interpreter::GetVariable(const std::string &variable)
 {
     //std::cerr << variable << std::endl;
     return variables[variable];

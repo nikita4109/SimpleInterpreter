@@ -2,19 +2,22 @@
 
 #include <string>
 #include <sstream>
+#include <vector>
 
 class Data
 {
+private:
+    std::vector<std::string> Parse(std::istream &);
 public:
-    std::string params;
-    std::string name;
+    const std::string name;
+    const std::vector<std::string> tokens;
 
-    Data(std::string&, std::istream&);
+    Data(const std::string&, std::istream&);
+    explicit Data(const std::string&);
     Data(Data&&) = default;
 
     Data(const Data&) = delete;
     Data& operator = (Data&) = delete;
 
-    std::stringstream GetStream();
     std::string GetLine();
 };

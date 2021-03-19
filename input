@@ -3,3 +3,4 @@ sub writeA
 sub main
     set A text
     call writeA
+    call writeA

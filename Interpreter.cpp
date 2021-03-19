@@ -32,7 +32,8 @@ void Interpreter::Run(std::fstream &istream)
 void Interpreter::RunProcedure(Data &data)
 {
     //std::cerr << "run" << " " << data.name << std::endl;
-    procedures[data.name]->Run(data.stream);
+    auto stream = data.GetStream();
+    procedures[data.name]->Run(stream);
 }
 
 std::string& Interpreter::GetVariable(std::string &variable)

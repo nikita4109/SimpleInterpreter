@@ -6,13 +6,15 @@
 class Data
 {
 public:
-    std::string line = "";
+    std::string params;
     std::string name;
-    std::stringstream stream;
 
     Data(std::string&, std::istream&);
     Data(Data&&) = default;
 
     Data(const Data&) = delete;
     Data& operator = (Data&) = delete;
+
+    std::stringstream GetStream();
+    std::string GetLine();
 };

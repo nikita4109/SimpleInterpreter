@@ -43,7 +43,7 @@ void Procedure::Print()
 {
     std::cout << interpreter->count << "\tsub " << name << '\n';
     for (int i = 0; i < data.size(); ++i)
-        std::cout << interpreter->count + i + 1 << "\t\t" << data[i].line << '\n';
+        std::cout << interpreter->count + i + 1 << "\t\t" << data[i].GetLine() << '\n';
 }
 
 Procedure::Procedure(Interpreter* _interpreter) : interpreter(_interpreter) { }

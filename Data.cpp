@@ -7,23 +7,31 @@ Data::Data(std::string& _name, std::istream &istream) : name(_name)
     if (name == "print")
     {
         istream >> token;
-        line = "print " + token;
-        stream << token;
+        params = token;
         return;
     }
 
     if (name == "call")
     {
         istream >> token;
-        line = "call " + token;
-        stream << token;
+        params = token;
         return;
     }
 
     if (name == "set")
     {
-        istream >> token; stream << token; line = "set " + token + " ";
-        istream >> token; stream << ' ' << token; line += token;
+        istream >> token; params = token + " ";
+        istream >> token; params += token;
         return;
     }
+}
+
+std::stringstream Data::GetStream()
+{
+    return std::stringstream(params);
+}
+
+std::string Data::GetLine()
+{
+    return name + " " + params;
 }

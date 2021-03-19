@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikita/CLionProjects/SimpleInterpreter/Data.h
+string
+-
+sstream
+-
+
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
+unordered_map
+-
+Procedure.h
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
+
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.cpp
+Interpreter.h
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
+Procedure.h
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
+iostream
+-
+
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
+fstream
+-
+vector
+-
+Data.h
+/home/nikita/CLionProjects/SimpleInterpreter/Data.h
+unordered_map
+-
+memory
+-
+

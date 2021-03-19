@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SimpleInterpreter.dir/main.cpp.o CMakeFiles/SimpleInterpreter.dir/Interpreter.cpp.o CMakeFiles/SimpleInterpreter.dir/Procedure.cpp.o CMakeFiles/SimpleInterpreter.dir/Print.cpp.o CMakeFiles/SimpleInterpreter.dir/Data.cpp.o CMakeFiles/SimpleInterpreter.dir/SetVariable.cpp.o CMakeFiles/SimpleInterpreter.dir/Call.cpp.o  -o SimpleInterpreter 

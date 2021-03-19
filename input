@@ -1,0 +1,5 @@
+sub writeA
+    print A
+sub main
+    set A text
+    call writeA

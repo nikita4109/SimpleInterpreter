@@ -7,9 +7,13 @@
 class Data
 {
 private:
+    /// Получаем из потока набор токенов.
     std::vector<std::string> Parse(std::istream &);
 public:
+    /// Название процедуры.
     const std::string name;
+
+    /// Аргументы процедуры.
     const std::vector<std::string> tokens;
 
     Data(const std::string&, std::istream&);
@@ -19,5 +23,6 @@ public:
     Data(const Data&) = delete;
     Data& operator = (Data&) = delete;
 
+    /// Получить строку из команды.
     std::string GetLine();
 };

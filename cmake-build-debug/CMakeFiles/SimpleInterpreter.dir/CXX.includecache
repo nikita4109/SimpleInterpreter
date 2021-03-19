@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/nikita/CLionProjects/SimpleInterpreter/Call.cpp
+Call.h
+/home/nikita/CLionProjects/SimpleInterpreter/Call.h
+Interpreter.h
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
+
 /home/nikita/CLionProjects/SimpleInterpreter/Call.h
 Procedure.h
 /home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
@@ -52,6 +58,14 @@ fstream
 Procedure.h
 /home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
 
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.cpp
+Interpreter.h
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
+Procedure.h
+/home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
+iostream
+-
+
 /home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
 fstream
 -
@@ -64,7 +78,19 @@ unordered_map
 memory
 -
 
+/home/nikita/CLionProjects/SimpleInterpreter/SetVariable.cpp
+SetVariable.h
+/home/nikita/CLionProjects/SimpleInterpreter/SetVariable.h
+Interpreter.h
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
+
 /home/nikita/CLionProjects/SimpleInterpreter/SetVariable.h
 Procedure.h
 /home/nikita/CLionProjects/SimpleInterpreter/Procedure.h
+
+/home/nikita/CLionProjects/SimpleInterpreter/main.cpp
+iostream
+-
+Interpreter.h
+/home/nikita/CLionProjects/SimpleInterpreter/Interpreter.h
 

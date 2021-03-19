@@ -20,6 +20,8 @@ Interpreter::Interpreter(std::istream &istream)
         procedures[procedure->GetName()] = std::move(procedure);
     }
 
+    std::cout << std::endl;
+
     if (!procedures.count("main"))
         throw std::runtime_error("Программа не содержит функцию main");
 }
@@ -32,8 +34,14 @@ void Interpreter::Run(std::fstream &istream)
 void Interpreter::RunProcedure(Data &data)
 {
     //std::cerr << "run" << " " << data.name << std::endl;
+
+    if (depth > MAX_SIZE)
+        throw std::runtime_error("Превышена максимальная глубина рекурсии");
+
+    ++depth;
     auto stream = data.GetStream();
     procedures[data.name]->Run(stream);
+    --depth;
 }
 
 std::string& Interpreter::GetVariable(std::string &variable)

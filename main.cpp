@@ -15,7 +15,7 @@ int main()
         }
         catch (const std::runtime_error& error)
         {
-            std::cout << error.what() << std::endl;
+            std::cerr << error.what() << std::endl;
         }
     }
 

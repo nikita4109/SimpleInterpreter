@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::string filename = "/home/nikita/CLionProjects/SimpleInterpreter/input";
+    std::string filename = "../input";
 
     std::fstream istream(filename);
     if (istream)

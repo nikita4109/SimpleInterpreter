@@ -37,6 +37,8 @@ void Interpreter::RunProcedure(const Data &data)
 
     if (depth > MAX_SIZE)
         throw std::runtime_error("Превышена максимальная глубина рекурсии");
+    if (!procedures.count(data.name))
+        throw std::runtime_error("Процедура с названием " + data.name + " не существует");
 
     ++depth;
     procedures[data.name]->Run(data.tokens);

@@ -1,5 +1,5 @@
 sub writeA
-    print A
+    call mai
 sub main
     set A 1
     writeA

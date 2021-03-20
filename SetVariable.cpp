@@ -3,7 +3,7 @@
 
 SetVariable::SetVariable(Interpreter *_interpreter) : Procedure(_interpreter)
 {
-    name = "set";
+    *name = "set";
 }
 
 void SetVariable::Run(const std::vector<std::string> &tokens)

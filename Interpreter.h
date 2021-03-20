@@ -29,9 +29,14 @@ public:
     /// Запускаем процедуру.
     void RunProcedure(const Data&);
 
+    std::unique_ptr<Procedure> GetProcedure(const std::string& name);
+
     /// Обращение к переменной.
     std::string& GetVariable(const std::string&);
 
     /// Количество строк в программе.
     size_t size = 0;
+
+    /// Текущая исполняемая строка.
+    //size_t current_line;
 };

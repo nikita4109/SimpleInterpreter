@@ -3,7 +3,7 @@
 
 Call::Call(Interpreter *_interpreter) : Procedure(_interpreter)
 {
-    name = "call";
+    *name = "call";
 }
 
 void Call::Run(const std::vector<std::string> &tokens)

@@ -13,17 +13,15 @@ class Procedure
 protected:
 
     /// Название процедуры.
-    std::string name;
+    std::shared_ptr<std::string> name = std::make_shared<std::string>();
 
     /// Список комманд в процедуре.
-    std::vector<Data> data;
+    std::shared_ptr<std::vector<Data>> data = std::make_shared<std::vector<Data>>();
 
     /// Указатель на интерпретатор.
     Interpreter* interpreter;
 public:
-    Procedure() { }
-    Procedure(Procedure&&) = default;
-    Procedure& operator = (Procedure&&) = default;
+    Procedure& operator = (const Procedure&);
 
     /// Разбиваем процедуру на команды, записываем в data.
     Procedure(std::istream&, Interpreter*);

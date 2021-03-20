@@ -26,7 +26,7 @@ Interpreter::Interpreter(std::istream &istream)
     std::cout << std::endl;
 
     if (!procedures.count("main"))
-        throw std::runtime_error("Программа не содержит функцию main");
+        throw std::runtime_error("Программа не содержит процедуру main");
 }
 
 void Interpreter::Run()
@@ -44,7 +44,7 @@ void Interpreter::RunProcedure(const Data &data)
         throw std::runtime_error("Процедура с названием " + data.name + " не существует");
 
     ++depth;
-    procedures[data.name]->Run(data.tokens);
+    GetProcedure(data.name)->Run(data.tokens);
     --depth;
 }
 
@@ -53,3 +53,12 @@ std::string& Interpreter::GetVariable(const std::string &variable)
     //std::cerr << variable << std::endl;
     return variables[variable];
 }
+
+std::unique_ptr<Procedure> Interpreter::GetProcedure(const std::string& procedure_name)
+{
+    if (procedure_name == "print") return std::make_unique<Print>(Print(this));
+    if (procedure_name == "set") return std::make_unique<SetVariable>(SetVariable(this));
+    if (procedure_name == "call") return std::make_unique<Call>(Call(this));
+    return std::make_unique<Procedure>(*procedures[procedure_name]);
+}
+

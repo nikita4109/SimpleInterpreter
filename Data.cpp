@@ -35,6 +35,8 @@ std::vector<std::string> Data::Parse(std::istream &istream)
         istream >> token; result.emplace_back(token);
         return result;
     }
+
+    throw std::runtime_error("У процедуры " + name + " нет аргументов");
 }
 
 Data::Data(const std::string &_name) : name(_name) { }

@@ -9,5 +9,5 @@ void Print::Run(const std::vector<std::string> &tokens)
 
 Print::Print(Interpreter* _interpreter) : Procedure(_interpreter)
 {
-    name = "print";
+    *name = "print";
 }

@@ -10,7 +10,7 @@ private:
     /// Имя переменной -> содержание.
     std::unordered_map<std::string, std::string> variables;
 
-    /// Название -> процедура.
+    /// Название -> указатель на процедуру.
     std::unordered_map<std::string, std::unique_ptr<Procedure>> procedures;
 
     /// Максимальная глубина рекурсии.

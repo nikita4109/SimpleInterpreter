@@ -34,16 +34,15 @@ Procedure::Procedure(std::istream &istream, Interpreter* _interpreter) : interpr
         data.emplace_back(Data(token, istream));
     }
 
-    Print();
-
-    interpreter->count += data.size() + 1;
+    shift = interpreter->size + 1;
+    size = data.size() + 1;
 }
 
 void Procedure::Print()
 {
-    std::cout << interpreter->count << "\tsub " << name << '\n';
+    std::cout << shift << "\tsub " << name << '\n';
     for (int i = 0; i < data.size(); ++i)
-        std::cout << interpreter->count + i + 1 << "\t\t" << data[i].GetLine() << '\n';
+        std::cout << shift + i + 1 << "\t\t" << data[i].GetLine() << '\n';
 }
 
 Procedure::Procedure(Interpreter* _interpreter) : interpreter(_interpreter) { }

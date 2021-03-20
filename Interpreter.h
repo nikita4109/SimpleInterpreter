@@ -32,5 +32,6 @@ public:
     /// Обращение к переменной.
     std::string& GetVariable(const std::string&);
 
-    size_t count = 0;
+    /// Количество строк в программе.
+    size_t size = 0;
 };

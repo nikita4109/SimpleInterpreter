@@ -17,6 +17,9 @@ Interpreter::Interpreter(std::istream &istream)
         if (procedures.count(procedure->GetName()))
             throw std::runtime_error("Две процедуры с названием: " + procedure->GetName());
 
+        procedure->Print();
+        size += procedure->size;
+
         procedures[procedure->GetName()] = std::move(procedure);
     }
 

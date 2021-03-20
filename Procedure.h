@@ -38,4 +38,10 @@ public:
     virtual void Run(const std::vector<std::string>&);
 
     std::string GetName();
+
+    /// Количество строк в процедуре.
+    size_t size = 0;
+
+    /// Позиция в программе.
+    size_t shift = 0;
 };
